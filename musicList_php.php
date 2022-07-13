@@ -22,41 +22,22 @@ include "db/songs_db.php";
 
     <div class="bg-darkgray">
         <div class="container">
-            <div class="row row-cols-5 py-5">
-                <?php
-                foreach ($musicList as $song) {
-                    $poster = $poster["poster"];
-                    $title = $song["title"];
-                    $author = $song["author"];
-                    $year = $song["year"];
-                    echo "<li> $title </li>";
-                    echo "<li> $author </li>";
-                    echo "<li> $year </li>";
-                    echo "<li> $year </li>";
-                }
-                ?>
+            <div class="row row-cols-5 py-5 text-white">
+
+                <?php foreach ($musicList as $song) { ?>
+
                 <div class="col pt-5 pb-2 d-flex">
                     <div class="my-card card p-3 text-white text-center shadow">
-                        <img src="<?php echo $poster ?>" alt="">
-                        <h4 class="text-uppercase fw-bold py-4"> <?php echo $title ?> </h4>
-                        <div> <?php echo $author ?> </div>
-                        <div> <?php echo $year ?> </div>
+                        <img src="<?php echo $song["poster"] ?>" alt="">
+                        <h4 class="text-uppercase fw-bold py-4"> <?php echo $song["title"] ?> </h4>
+                        <div> <?php echo $song["author"] ?> </div>
+                        <div> <?php echo $song ["year"] ?> </div>
                     </div>
                 </div>
+
+                <?php } ?>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-
-        <ul id="musicContainer">
-            <?php
-            foreach ($musicList as $song) {
-                $title = $song["title"];
-                echo "<li> $title </li>";
-            }
-            ?>
-        </ul>
     </div>
 </body>
 
